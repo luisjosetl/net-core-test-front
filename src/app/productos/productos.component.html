@@ -1,0 +1,24 @@
+<h1>Productos</h1>
+
+
+<table class="table">
+  <tr>
+    <th>Id</th>
+    <th>Descripcion</th>
+    <th>Marca</th>
+    <th>Modelo</th>
+    <th>% Descuento</th>
+    <th>Accion</th>
+  </tr>
+  <tr *ngFor="let producto of productos">
+    <td>{{ producto.id }}</td>
+    <td>{{ producto.descripcion }}</td>
+    <td>{{ producto.marca }}</td>
+    <td>{{ producto.modelo }}</td>
+    <td>{{ producto.porcDescuento }}</td>
+    <td>
+      <button type="button" class="btn btn-outline-danger mr-1" (click)="deleteProducto(producto.id)">Eliminar</button>
+      <button type="button" class="btn btn-outline-primary" [routerLink]="['edit/', producto.id]">Editar</button>
+    </td>
+  </tr>
+</table>
